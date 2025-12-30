@@ -7,6 +7,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+////////////// USER DESCRIPTION //////////////
+/// contains both admins and guest users [denoted by userType]
+/// users can have multiple reservations, though a reservation can only have 1 user. 1:M relationship
+
 @Entity
 @Table(name="USERS")
 public class User {
@@ -30,7 +34,7 @@ public class User {
 
 
 
-
+    public User() {}  //default constructor bc it throws a runtime error without one
     public User(String userType, String username, String password) {
         this.userType = userType;
         this.username = username;

@@ -10,6 +10,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Table;
 
+//////////// RESERVATION DESCRIPTION ///////////////
+/// multiple reservations to a user [M:1 relationship]
+/// only 1 room to 1 reservation [1:1 relationship]
+/// used as a junction table between room and user
+/// checking for if a reservation is overlapping another is done in ReservationService
+/// checking if guests are over capacity is done in ReservationService
+
 @Entity
 @Table(name="RESERVATIONS")
 public class Reservation {
@@ -39,7 +46,7 @@ public class Reservation {
 
 
 
-
+    public Reservation() {} //default constructor bc it throws a runtime error without one
     public Reservation(int guestId, int roomId, LocalDate startDate, LocalDate endDate, int numGuests) {
         this.guestId = guestId;
         this.roomId = roomId;

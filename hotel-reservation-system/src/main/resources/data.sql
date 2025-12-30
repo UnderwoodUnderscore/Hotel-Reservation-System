@@ -8,17 +8,17 @@ values ('guest', 'guest5000', 'otherpassword432');
 
 
 /*ROOMS*/
-insert into ROOMS(room_type, capacity, room_number)
-values ('quad', 4, 303);
+insert into ROOMS(room_type, capacity, room_number, price)
+values ('quad', 4, 303, 200);
 
-insert into ROOMS(room_type, capacity, room_number)
-values ('triple', 3, 101);
+insert into ROOMS(room_type, capacity, room_number, price)
+values ('triple', 3, 101, 150);
 
-insert into ROOMS(room_type, capacity, room_number)
-values ('double', 2, 106);
+insert into ROOMS(room_type, capacity, room_number, price)
+values ('double', 2, 106, 100);
 
-insert into ROOMS(room_type, capacity, room_number)
-values ('single', 1, 215);
+insert into ROOMS(room_type, capacity, room_number, price)
+values ('single', 1, 215, 75);
 
 
 

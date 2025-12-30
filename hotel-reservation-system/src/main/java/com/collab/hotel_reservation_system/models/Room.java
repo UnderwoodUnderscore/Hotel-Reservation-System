@@ -7,6 +7,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+//////////// ROOM DESCRIPTION ////////////
+/// 1 room can be associated with multiple reservations [though not at the same time obv] [1:M relationship]
+
 @Entity
 @Table(name="ROOMS")
 public class Room {
@@ -25,11 +28,14 @@ public class Room {
     @Column(name="room_number")
     private int roomNumber;
 
+    @Column(name="price")
+    private int price;
+
     @Column(name="deleted")
     private boolean deleted;
 
 
-
+    public Room() {}  //default constructor bc it throws a runtime error without one
     public Room(String roomType, int capacity, int roomNumber) {
         this.roomType = roomType;
         this.capacity = capacity;
