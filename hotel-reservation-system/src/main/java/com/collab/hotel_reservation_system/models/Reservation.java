@@ -42,7 +42,7 @@ public class Reservation {
     private int numGuests;
 
     @Column(name="deleted")
-    private int deleted;
+    private boolean deleted;
 
 
 
@@ -100,17 +100,17 @@ public class Reservation {
         this.numGuests = numGuests;
     }
 
-    public int getDeleted() {
+    public boolean isDeleted() {
         return deleted;
     }
-    public void setDeleted(int deleted) {
+    public void setDeleted(boolean deleted) {
         this.deleted = deleted;
     }
 
 
 
 
-
+    
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -121,10 +121,9 @@ public class Reservation {
         result = prime * result + ((startDate == null) ? 0 : startDate.hashCode());
         result = prime * result + ((endDate == null) ? 0 : endDate.hashCode());
         result = prime * result + numGuests;
-        result = prime * result + deleted;
+        result = prime * result + (deleted ? 1231 : 1237);
         return result;
     }
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -156,12 +155,10 @@ public class Reservation {
             return false;
         return true;
     }
-
+    
     @Override
     public String toString() {
         return "Reservation [id=" + id + ", guestId=" + guestId + ", roomId=" + roomId + ", startDate=" + startDate
                 + ", endDate=" + endDate + ", numGuests=" + numGuests + ", deleted=" + deleted + "]";
     }
-
-    
 }

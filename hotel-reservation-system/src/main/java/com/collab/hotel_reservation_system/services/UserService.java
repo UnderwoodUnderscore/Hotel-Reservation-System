@@ -46,7 +46,13 @@ public class UserService {
         int returnedId = userRepository.updateUser(id, user.getUserType(), user.getUsername(), user.getPassword());
 
         if (returnedId != 0) {
-            return findUserById(returnedId);
+            User currUser = findUserById(returnedId);
+            
+            if (currUser.isDeleted()) {
+                throw new NoSuchElementException("Can't alter a deleted user!");
+            } else {
+                return findUserById(returnedId);
+            }
         } else {
             throw new NoSuchElementException("No user by that ID exists");
         }
