@@ -1,4 +1,4 @@
-export default function Feature({ room, price, amenities }) {
+export default function Feature({ room, price, amenities, handleBooking}) {
 
     return (
         <>
@@ -8,7 +8,7 @@ export default function Feature({ room, price, amenities }) {
                     <div className="featureMain">
                         <p>{room}</p>
                         <p>${price} usd</p>
-                        <button className="featureButton">Book Today!</button>
+                        <button className="featureButton" onClick={handleBooking}>Book Today!</button>
                     </div>
                     <div className="featureAmenities">
                         {ShowAmenities(amenities)}
