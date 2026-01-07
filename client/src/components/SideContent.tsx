@@ -1,12 +1,12 @@
 import OtherOptions from './OtherOptions';
 
-export default function SideContent({ side, display, handleBooking }) {
+export default function SideContent({ side, display, onBooking }) {
 
     return (
         <>
             <section className={"sideContent " + side +  ' ' + display}>
                 <h2 className="sideContent header">Form</h2>
-                <span className="exit-icon" onClick={handleBooking}></span>
+                <span className="exit-icon" onClick={onBooking}></span>
 
                 <p>Book Today!</p>
                 <img className="sideContent image" src="../public/images/confident professional woman pointing perfect.png" alt="confident professional woman pointing to upper-left"></img>
