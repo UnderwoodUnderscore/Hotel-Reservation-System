@@ -15,7 +15,7 @@ export default function Page() {
 		<>
 			<Header />
 			<Feature room='Featured Luxury Apartment' price='699' amenities={[{'Front Beach' : '3 Bedrooms'}, {'Jacuzzi' : '3 Bathrooms'}, {'Concierge' : '24 hours'}]} handleBooking={openBooking} />
-			<SideContent side='right' display={showBooking ? '' : 'hidden'} />
+			<SideContent side='right' display={showBooking ? '' : 'hidden'} handleBooking={openBooking} />
 		</>
 	)
 }

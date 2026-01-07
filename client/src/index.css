@@ -160,6 +160,7 @@ section.sideContent .secondary {
   font-size: 14px;
   margin: 7px 0;
   display: block;
+  color: grey;
 }
 #bookingForm label:first-child {
   margin-top: 20px;
