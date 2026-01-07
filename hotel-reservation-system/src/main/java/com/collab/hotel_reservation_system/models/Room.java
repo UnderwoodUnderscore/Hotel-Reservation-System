@@ -72,6 +72,13 @@ public class Room {
         this.roomNumber = roomNumber;
     }
 
+    public int getPrice() {
+        return price;
+    }
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     public boolean isDeleted() {
         return deleted;
     }

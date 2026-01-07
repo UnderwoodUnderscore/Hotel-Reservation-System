@@ -51,7 +51,7 @@ public class UserService {
             if (currUser.isDeleted()) {
                 throw new NoSuchElementException("Can't alter a deleted user!");
             } else {
-                return findUserById(returnedId);
+                return currUser;
             }
         } else {
             throw new NoSuchElementException("No user by that ID exists");
