@@ -1,10 +1,10 @@
 import OtherOptions from './OtherOptions';
 
-export default function SideContent({ side, display, onBooking }) {
+export default function SideContent({ side, onBooking }) {
 
     return (
         <>
-            <section className={"sideContent " + side +  ' ' + display}>
+            <section className={"sideContent " + side}>
                 <h2 className="sideContent header">Form</h2>
                 <span className="exit-icon" onClick={onBooking}></span>
 
