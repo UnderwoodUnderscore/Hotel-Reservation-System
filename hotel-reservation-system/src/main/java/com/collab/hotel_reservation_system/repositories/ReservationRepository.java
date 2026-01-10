@@ -16,11 +16,22 @@ import jakarta.transaction.Transactional;
 @Repository
 public interface ReservationRepository extends JpaRepository<Reservation, Integer> {
     // SELECT QUERIES //
+
+    //for getting all reservations
     @Query
-    public List<Reservation> findByDeletedFalse();
+    public List<Reservation> findByDeletedFalse(); 
+
+    /*
+    //getting records that belong to a certain user
+    @Query("select r from Reservation r where r.guestId = ?1")
+    public List<Reservation> findByGuestId(int guestId);
+    */
+
 
 
     // UPDATING RECORDS //
+
+    //updating entire record
     @Query("update Reservation r set r.guestId=:guest_id, r.roomId=:room_id, r.startDate=:start_date, r.endDate=:end_date, r.numGuests=:num_guests where id=:reservation_id")
     @Transactional
     @Modifying
@@ -28,6 +39,7 @@ public interface ReservationRepository extends JpaRepository<Reservation, Intege
         @Param("start_date") LocalDate startDate, @Param("end_date") LocalDate endDate, @Param("num_guests") int numGuests);
 
     
+    //deleting records
     @Query("update Reservation r set r.deleted = TRUE where id=:reservationId")
     @Transactional
     @Modifying

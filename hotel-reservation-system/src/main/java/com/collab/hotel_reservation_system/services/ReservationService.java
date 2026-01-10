@@ -29,6 +29,12 @@ public class ReservationService {
         }
     }
 
+    /*
+    public List<Reservation> getReservationsByUserId(int userId) {
+        return reservationRepository.findByGuestId(userId);
+    }
+    */
+
 
 
     // HANDLING POST REQUESTS

@@ -1,4 +1,4 @@
-package com.collab.hotel_reservation_system.controllers;
+package com.collab.hotel_reservation_system.controllers.userview;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -17,19 +17,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/user-view/users")
 @CrossOrigin("*")
-public class UserController {
+public class UserViewUserController {
 
     private final UserService userService;
 
-    public UserController(UserService userService) {
+    public UserViewUserController(UserService userService) {
         this.userService = userService;
     }
 

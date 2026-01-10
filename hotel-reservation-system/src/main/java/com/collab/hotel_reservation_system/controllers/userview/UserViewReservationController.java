@@ -1,4 +1,4 @@
-package com.collab.hotel_reservation_system.controllers;
+package com.collab.hotel_reservation_system.controllers.userview;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,9 +10,9 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -22,25 +22,29 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
-@RequestMapping("/reservations")
-public class ReservationController {
+@RequestMapping("/user-view/reservations")
+@CrossOrigin("*")
+public class UserViewReservationController {
     private final ReservationService reservationService;
-    public ReservationController(ReservationService reservationService) {
+    public UserViewReservationController(ReservationService reservationService) {
         this.reservationService = reservationService;
     }
 
     // GET REQUESTS
-    @GetMapping
-    public ResponseEntity<List<Reservation>> getAllReservations() {
+    /*
+    //for the user to view their reservations
+    @GetMapping("?userid={userid}")
+    public ResponseEntity<List<Reservation>> getReservationsByUserId(@PathVariable int userId) {
         try {
-            List<Reservation> res = reservationService.getAllReservations();
-            return new ResponseEntity<>(res, HttpStatus.OK);
+            List<Reservation> reservations = reservationService.getReservationsByUserId(userId);
+            return new ResponseEntity<>(reservations, HttpStatus.OK);
+
         } catch (Exception e) {
-            return ResponseEntity.internalServerError().header("Couldn't retrieve all reservations", e.getMessage()).build();
+            return ResponseEntity.internalServerError().header("Couldn't retrieve reservations belonging to user " + userId, e.getMessage()).build();
         }
     }
-
-    //later implement a getAllReservationsByUserId
+    */
+    
     
 
 
