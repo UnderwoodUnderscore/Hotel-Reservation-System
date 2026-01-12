@@ -1,30 +1,23 @@
 import { useState } from 'react';
 import Header from './components/Header';
-import Feature from './components/Feature';
-import SideContent from './components/SideContent.tsx';
-import Profile from './components/Profile';
+import Intro from './components/Intro';
+import Form from './components/Forms';
 
 export default function Page() {
 
-	const [showLanding, setShowLanding] = useState(true);
-	const [showProfile, setShowProfile] = useState(false);
-	const [showBooking, setShowBooking] = useState(false);
+	const showLogin = true;
 	
-	function handleProfile() {
-		setShowLanding(false);
-		setShowProfile(true);
-	}
-
-	function handleBooking() {
-		setShowBooking(!showBooking);
-	}
+	let landing = (
+		<>
+			<Header />
+			<Intro headerText='Find Your Perfect Place to Stay' descText='Conveniently aggregate interoperable value after cross functional innovation. Enthusiastically transition innovative web services before future-proof.' />
+			<Form type='booking' />
+		</>
+	)
 
 	return (
 		<>
-			<Header onProfile={handleProfile} />
-			{showLanding && <Feature room='Featured Luxury Apartment' price='699' amenities={[{'Front Beach' : '3 Bedrooms'}, {'Jacuzzi' : '3 Bathrooms'}, {'Concierge' : '24 hours'}]} onBooking={handleBooking} />}
-			{showBooking && <SideContent side='right' onBooking={handleBooking} />}
-			{showProfile && <Profile />}
+			{showLogin && <Form type='login' />}
 		</>
 	)
 }

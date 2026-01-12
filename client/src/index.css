@@ -1,4 +1,4 @@
-/* Mobile first design */
+/* Mobile first design (screen widths range: 360px - 414px)*/
 /* ---------------------------------- */
 
 :root {
@@ -15,225 +15,69 @@
   /* clean slate */
   margin: 0;
   padding: 0;
-  max-width: 360px; /* mobile screen widths range from 360px to 414px */
   align-content: center;
+  box-sizing: border-box;
 }
 
 body {
-}
 
-header {
-  position: relative;
-  height: 70px;
-  width: 100%;
-  background-color: var(--bg-color);
-}
+  header {
+    i.fa-archway {
+      font-size: 28px;
+  
+      &::after {
+        content: "Hotel";
+      }
+    }
 
-header .logo {
-  position: absolute;
-  top: 23%;
-  left: 7%;
-}
-header .fa-archway {
-  font-size: 32px;
-  position: absolute;
-  top: 25%;
-  left: 4%;
-  &:after {
-    font-size: 20px;
-    content: "otel";
+  }
+
+  form {
+
+    &#loginForm {
+      i.fa-house {
+        font-size: 35px;
+        width: 100%;
+      }
+      h1.loginTitle {
+        font-size: 1.4em;
+        text-align: center;
+        margin: 15px;
+      }
+      label {
+        padding-top: 15px;
+      }
+      label, input {
+        margin: 0 auto;
+      }
+      button {
+        margin: 25px auto;
+      }
+      input, button {
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      label, input, button {
+        display: block;
+        max-width: 300px;
+        width: 50%;
+      }
+    }
+  }
+
+  .intro {
+    text-align: center;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+
+    padding: 10px;
+    border-radius: 4%;
   }
 }
-header a:visited {
-  color: inherit;
-}
-header .fa-bars {
-  text-align: center;
-  position: absolute;
-  right: 4%;
-  top: 35%;
-  cursor: pointer;
-}
-
-.menuItem {
-  width: 100%;
-  padding: 20px;
-  text-transform: capitalize;
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  margin-top: 70px;
-  z-index: 1;
-  background-color: white;
-}
-
-section.feature {
-  width: 100%;
-  height: 450px;
-  position: relative;
-}
-
-.featureContent{
-  color: white;
-  position: absolute;
-  bottom: 0;
-  padding: 40px 20px;
-}
-.featureMain {
-  font-size: 40px;
-}
-.featureMain > :nth-child(2) {
-  margin-bottom: 0;
-}
-
-.featureButton {
-  font-size: 10px;
-  padding: 10px 20px;
-  border-radius: 30px;
-  border: 0;
-  text-transform: uppercase;
-  margin-top: 0;
-  cursor: pointer;
-}
-
-.featureAmenities {
-  display: flex;
-  margin-top: 10px;
-}
-.featureAmenities .amenityItem {
-  width: 30%;
-  border-right: 0.5px solid white;
-  margin-left: 10px;
-}
-.featureAmenities > :first-child {
-  margin-left: 0;
-}
-.featureAmenities > :last-child {
-  border-right: none;
-}
-.featureAmenities .amenityItem span > span {
-  display: block;
-}
-.featureAmenities .icon {
-  display: block;
-  height: 40px;
-}
-.featureAmenities .amenitiesText {
-  font-size: 12px;
-  letter-spacing: 0.5px;
-}
-
-section.sideContent.left {
-  width: 85vw;
-  background-color: var(--sideContent-bg-color);
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-section.sideContent.right {
-  width: 85vw;
-  background-color: var(--sideContent-bg-color);
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-section.sideContent .header {
-  font-size: 11px;
-  padding: 20px 0 0 15px;
-  text-transform: uppercase;
-  border-top: 1px solid grey;
-  color: grey;
-}
-section.sideContent .header:first-child {
-  display: inline-block;
-  border: none;
-}
-section.sideContent .exit-icon {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border-radius: 3px;
-  position: absolute;
-  right: 0;
-  margin: 18px 20px 0 0 ;
-  background-color: var(--sideContent-tertiary-bg-color);
-  text-align: center;
-  cursor: pointer;
-  &::after {
-    content: "\d7";
-    font-size: 18px;
-    color: white;
-  }
-}
-section.sideContent > p {
-  font-size: 30px;
-  padding: 15px 0 10px 15px;
-  color: var(--sideContent-tertiary-bg-color);
-}
-section.sideContent .image {
-}
-section.sideContent .secondary {
-  padding: 0 15px;
-  background-color: var(--sideContent-secondary-bg-color);
-}
-#bookingForm label {
-  font-size: 14px;
-  margin: 7px 0;
-  display: block;
-  color: grey;
-}
-#bookingForm label:first-child {
-  margin-top: 20px;
-}
-#bookingForm input, textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-#bookingForm > #booking-message {
-  min-width: 100%;
-  min-height: 90px;
-  max-height: 225px;
-  resize: vertical;
-  margin-top: 0;
-  align-content: flex-start;
-}
-#bookingForm button {
-  width: 100%;
-  height: 35px;
-  margin: 5px 0 30px 0;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: white;
-  background-color: var(--sideContent-tertiary-bg-color);
-  border: none;
-}
-section.sideContent .otherOption {
-  padding: 15px;
-  border-bottom: 1px solid grey;
-}
-section.sideContent .otherOption .name {
-  font-size: 22px;
-  color: var(--sideContent-tertiary-bg-color)
-}
-section.sideContent .otherOption .fa-arrow-right {
-  font-size: 15px;
-}
-section.sideContent .otherOption .desc {
-  font-size: 13px;
-  letter-spacing: 1px;
-  color: grey;
-}
-section.sideContent .otherOption .number {
-  font-weight: 700;
-  color: grey;
-}
-
-
-
-
 
 
 
