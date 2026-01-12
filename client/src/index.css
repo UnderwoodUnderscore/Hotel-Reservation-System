@@ -35,6 +35,8 @@ body {
   form {
 
     &#loginForm {
+      margin-top: 30vh;
+
       i.fa-house {
         font-size: 35px;
         width: 100%;
