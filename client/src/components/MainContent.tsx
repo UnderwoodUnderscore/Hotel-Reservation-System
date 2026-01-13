@@ -14,7 +14,7 @@ export default function MainContent() {
                     Enthusiastically transition innovative web services before future-proof.
                 </p>
 
-                <Feature imageSrc='https://picsum.photos/1400/900' imageAlt='random image placeholder' />
+                <Feature imgSrc='https://picsum.photos/1400/900' />
 
                 <Form type='booking' />
             </div>
