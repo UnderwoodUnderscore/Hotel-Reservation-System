@@ -19,12 +19,10 @@ export default function Form({ type }) {
 
     const bookingForm = (
         <form id='bookingForm'>
-            <img src='https://picsum.photos/1400/900' alt='random image' />
-
             <Field type='date' text='Check In' />
             <Field type='date' text='Check Out' />
             <Field type='place' text='Place' />
-            <Field type='number' text='People' />
+            <Field type='people' text='People' />
         </form>
     );
 

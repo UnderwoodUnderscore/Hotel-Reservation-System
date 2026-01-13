@@ -1,5 +1,6 @@
 import Header from './Header';
 import Feature from './Feature';
+import Form from './Forms';
 
 export default function MainContent() {
 
@@ -13,7 +14,9 @@ export default function MainContent() {
                     Enthusiastically transition innovative web services before future-proof.
                 </p>
 
-                <Feature imageSrc='https://picsum.photos/1400/700' imageAlt='random image placeholder' />
+                <Feature imageSrc='https://picsum.photos/1400/900' imageAlt='random image placeholder' />
+
+                <Form type='booking' />
             </div>
         </>
     );

@@ -103,6 +103,9 @@ body {
 
     border-radius: 4%;
   }
+
+  .dateField, .placeField, .peopleField {
+  }
 }
 
 
