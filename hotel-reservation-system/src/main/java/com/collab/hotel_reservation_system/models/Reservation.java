@@ -10,6 +10,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Table;
 
+//////////// RESERVATION DESCRIPTION ///////////////
+/// multiple reservations to a user [M:1 relationship]
+/// only 1 room to 1 reservation [1:1 relationship]
+/// used as a junction table between room and user
+/// checking for if a reservation is overlapping another is done in ReservationService
+/// checking if guests are over capacity is done in ReservationService
+
 @Entity
 @Table(name="RESERVATIONS")
 public class Reservation {
@@ -35,11 +42,11 @@ public class Reservation {
     private int numGuests;
 
     @Column(name="deleted")
-    private int deleted;
+    private boolean deleted;
 
 
 
-
+    public Reservation() {} //default constructor bc it throws a runtime error without one
     public Reservation(int guestId, int roomId, LocalDate startDate, LocalDate endDate, int numGuests) {
         this.guestId = guestId;
         this.roomId = roomId;
@@ -93,17 +100,17 @@ public class Reservation {
         this.numGuests = numGuests;
     }
 
-    public int getDeleted() {
+    public boolean isDeleted() {
         return deleted;
     }
-    public void setDeleted(int deleted) {
+    public void setDeleted(boolean deleted) {
         this.deleted = deleted;
     }
 
 
 
 
-
+    
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -114,10 +121,9 @@ public class Reservation {
         result = prime * result + ((startDate == null) ? 0 : startDate.hashCode());
         result = prime * result + ((endDate == null) ? 0 : endDate.hashCode());
         result = prime * result + numGuests;
-        result = prime * result + deleted;
+        result = prime * result + (deleted ? 1231 : 1237);
         return result;
     }
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -149,12 +155,10 @@ public class Reservation {
             return false;
         return true;
     }
-
+    
     @Override
     public String toString() {
         return "Reservation [id=" + id + ", guestId=" + guestId + ", roomId=" + roomId + ", startDate=" + startDate
                 + ", endDate=" + endDate + ", numGuests=" + numGuests + ", deleted=" + deleted + "]";
     }
-
-    
 }

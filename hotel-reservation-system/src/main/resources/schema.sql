@@ -15,6 +15,7 @@ create table ROOMS (
     room_type VARCHAR(50) NOT NULL,
     capacity INT NOT NULL,
     room_number INT NOT NULL UNIQUE,
+    price INT NOT NULL,
     deleted BOOLEAN DEFAULT 'FALSE'
 );
 
