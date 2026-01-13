@@ -1,49 +1,31 @@
-package com.collab.hotel_reservation_system.controllers.userview;
+package com.collab.hotel_reservation_system.controllers.abstractclasses;
 
-import java.util.List;
+
 import java.util.NoSuchElementException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.collab.hotel_reservation_system.models.User;
-import com.collab.hotel_reservation_system.services.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.collab.hotel_reservation_system.models.User;
+import com.collab.hotel_reservation_system.services.UserService;
 
+//// for the shared HTTP requests between guest and admin
 
-
-@RestController
-@RequestMapping("/user-view/users")
-@CrossOrigin("*")
-public class UserViewUserController {
-
+public abstract class AbstractUserController {
     private final UserService userService;
-
-    public UserViewUserController(UserService userService) {
+    public AbstractUserController(UserService userService) {
         this.userService = userService;
     }
 
 
-    // GET REQUESTS
 
-    @GetMapping
-    public ResponseEntity<List<User>> getAllUsers() {
-        try {
-            List<User> returnList = userService.getAllUsers();
-            return new ResponseEntity<>(returnList, HttpStatus.OK);
-        } catch (Exception e) {
-            return ResponseEntity.internalServerError().header("Couldn't retrieve all users", e.getMessage()).build();
-        }
-    }
+    // GET REQUESTS
 
     @GetMapping("/{id}")
     public ResponseEntity<User> getUserById(@PathVariable int id) {
@@ -54,8 +36,7 @@ public class UserViewUserController {
             return ResponseEntity.internalServerError().header("Couldn't retrieve user at this ID", e.getMessage()).build();
         }
     }
-    
-    
+
 
 
     // POST REQUESTS
@@ -88,7 +69,7 @@ public class UserViewUserController {
         }
     }
 
-    //later create put requests for username and password
+    
 
 
 

@@ -9,17 +9,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.collab.hotel_reservation_system.controllers.abstractclasses.AbstractReservationController;
 import com.collab.hotel_reservation_system.models.Reservation;
 import com.collab.hotel_reservation_system.services.ReservationService;
 
 @RestController
 @RequestMapping("/admin-view/reservations")
 @CrossOrigin("*")
-public class AdminViewReservationController {
+public class AdminViewReservationController extends AbstractReservationController {
 
     private final ReservationService reservationService;
 
     public AdminViewReservationController(ReservationService reservationService) {
+        super(reservationService);
         this.reservationService = reservationService;
     }
 
@@ -38,16 +40,5 @@ public class AdminViewReservationController {
 
 
 
-    // POST REQUESTS
-
-
-
-
-
-    // PUT REQUESTS
-
-
-
-
-    // DELETE REQUESTS
+    // post, put, and delete requests created in parent class
 }

@@ -1,55 +1,35 @@
-package com.collab.hotel_reservation_system.controllers.userview;
+package com.collab.hotel_reservation_system.controllers.abstractclasses;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.collab.hotel_reservation_system.models.Reservation;
 import com.collab.hotel_reservation_system.services.ReservationService;
 
-import java.util.List;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+//// for the shared HTTP requests between guest and admin
 
 
+public abstract class AbstractReservationController {
 
-
-@RestController
-@RequestMapping("/user-view/reservations")
-@CrossOrigin("*")
-public class UserViewReservationController {
     private final ReservationService reservationService;
-    public UserViewReservationController(ReservationService reservationService) {
+    public AbstractReservationController(ReservationService reservationService) {
         this.reservationService = reservationService;
     }
 
-    // GET REQUESTS
-    /*
-    //for the user to view their reservations
-    @GetMapping("?userid={userid}")
-    public ResponseEntity<List<Reservation>> getReservationsByUserId(@PathVariable int userId) {
-        try {
-            List<Reservation> reservations = reservationService.getReservationsByUserId(userId);
-            return new ResponseEntity<>(reservations, HttpStatus.OK);
 
-        } catch (Exception e) {
-            return ResponseEntity.internalServerError().header("Couldn't retrieve reservations belonging to user " + userId, e.getMessage()).build();
-        }
-    }
-    */
+    //the get requests are unique between admin and guest
+
+
     
-    
-
-
 
     // POST REQUESTS
+
     @PostMapping()
     public ResponseEntity<Reservation> createReservation(@RequestBody Reservation newReservation) {
         try {
@@ -59,11 +39,11 @@ public class UserViewReservationController {
             return ResponseEntity.internalServerError().header("Couldn't create new reservation", e.getMessage()).build();
         }
     }
-    
 
 
 
     // PUT REQUESTS
+
     @PutMapping("/{id}")
     public ResponseEntity<Reservation> updateReservation(@PathVariable int id, @RequestBody Reservation newReservation) {
         try {
@@ -76,7 +56,9 @@ public class UserViewReservationController {
 
 
 
+
     // DELETE REQUEST
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Reservation> deleteReservation(@PathVariable int id) {
         try {
