@@ -15,7 +15,6 @@ export default function Header() {
 
     function handleMenuClick() {
         setShowMenuItems(!showMenuItems);
-        console.log("Bars clicked!");
     }
     
     return (
