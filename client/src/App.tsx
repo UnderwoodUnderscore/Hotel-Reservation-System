@@ -10,12 +10,16 @@ export default function Page() {
 
 	const showLogin = false;
 	const loggedIn = true;
+
+	function handlePageChange(newPage: string) {
+		setPage(newPage);
+	}
 	
 	return (
 		<>
 			{showLogin && <Form type='login' />}
-			{loggedIn && <Header />}
-			{loggedIn && <MainContent content={page} />}
+			{loggedIn && <Header onPageChange={handlePageChange} />}
+			{loggedIn && <MainContent page={page} />}
 		</>
 	)
 }

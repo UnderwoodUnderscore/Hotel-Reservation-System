@@ -2,7 +2,7 @@ import Header from './Header';
 import Feature from './Feature';
 import Form from './Forms';
 
-export default function MainContent({ content }) {
+export default function MainContent({ page }) {
 
     const isAdmin = false;
 
@@ -10,11 +10,11 @@ export default function MainContent({ content }) {
     const Settings = ShowSettings();
     const Profile = ShowProfile();
 
-    let page = {"Home" : Home, "Settings" : Settings, "Profile" : Profile};
+    let pageContent = {"Home" : Home, "Settings" : Settings, "Profile" : Profile};
 
     return (
         <section className='mainContent'>
-            {page[content]}
+            {pageContent[page]}
         </section>
     )
 }
@@ -45,17 +45,17 @@ function ShowHome( isAdmin: boolean) {
 function ShowSettings() {
 
     return (
-        <>
-
-        </>
+        <section className='mainContent'>
+        
+        </section>
     )
 }
 
 function ShowProfile() {
 
     return (
-        <>
-
-        </>
+        <section className='mainContent'>
+            
+        </section>
     )
 }
