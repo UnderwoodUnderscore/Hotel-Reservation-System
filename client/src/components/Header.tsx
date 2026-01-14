@@ -22,7 +22,7 @@ export default function Header({ onPageChange }) {
         <>
             <header className="header">
                 <a href=''><i className="fa-solid fa-archway"></i></a>
-                <i className="fa-solid fa-bars" onClick={handleMenuClick}></i>
+                <i className="fa-solid fa-bars cursor-pointer" onClick={handleMenuClick}></i>
 
                 {showMenuItems && <Menu list={mainMenuItems} />}
             </header>

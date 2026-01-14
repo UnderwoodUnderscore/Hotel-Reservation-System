@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Intro from './components/Intro';
 import Form from './components/Forms';
 import MainContent from './components/MainContent';
 import Header from './components/Header';
@@ -19,7 +18,7 @@ export default function Page() {
 		<>
 			{showLogin && <Form type='login' />}
 			{loggedIn && <Header onPageChange={handlePageChange} />}
-			{loggedIn && <MainContent page={page} />}
+			{loggedIn && <MainContent page={page} onPageChange={handlePageChange} />}
 		</>
 	)
 }

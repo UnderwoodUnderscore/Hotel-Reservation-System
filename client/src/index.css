@@ -20,6 +20,23 @@
 }
 
 body {
+  /* self-defined css quick styles */
+  .ta-left {
+    text-align: left;
+  }
+  .ta-center {
+    text-align: center;
+  }
+  .ta-right {
+    text-align: right;
+  }
+  .ji-center {
+    justify-items: center;
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  /* -----------------------------------*/
   
   header {
     padding: 15px 10px;
@@ -37,11 +54,9 @@ body {
     i.fa-bars {
       font-size: 25px;
       float: right;
-      cursor: pointer;
     }
 
     ul.headerMenu {
-      text-align: center;
       margin-top: 15px;  /* match with header padding */
       position: absolute;
       left: 0;
@@ -51,7 +66,6 @@ body {
     ul.headerMenu > li {
       margin: 5px 0;
       padding: 5px 0;
-      cursor: pointer;
     }
 
   }
@@ -71,7 +85,6 @@ body {
       }
       h1.loginTitle {
         font-size: 1.4em;
-        text-align: center;
         margin: 15px;
       }
       label {
@@ -98,7 +111,6 @@ body {
     &#bookingForm {
       background-color: var(--secondary-bg-color);
       padding: 15px 0;
-      justify-items: center;
 
       .dateField, .peopleField {
         margin: 20px 0;
@@ -113,7 +125,6 @@ body {
       h3 {
         font-weight: normal;
         margin-bottom: 5px;
-        text-align: left;
       }
       input {
         display: block;
@@ -131,7 +142,6 @@ body {
         margin-bottom: 20px;
         color: white;
         background-color: var(--tertiary-bg-color);
-        cursor: pointer;
 
         &:hover {
           background-color: black;
@@ -141,7 +151,6 @@ body {
   }
 
   .intro {
-    text-align: center;
     margin-top: 10px;
   }
 

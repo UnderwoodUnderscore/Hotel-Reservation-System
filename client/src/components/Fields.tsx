@@ -16,7 +16,7 @@ export default function Field({ type, text }) {
 
     return (
         <section className={type + 'Field'}>
-            <h3>{text}</h3>
+            <h3 className='ta-left'>{text}</h3>
             { type === 'date' && dateField }
             { type === 'people' && peopleField }
         </section>
