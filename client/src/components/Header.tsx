@@ -8,6 +8,7 @@ export default function Header() {
 
     const mainMenuItems = [
         <Item text='Home' onClick='' />,
+        <Item text='Rooms' onClick='' />,
         <Item text='Profile' onClick='' />,
         <Item text='Contact' onClick='' />,
         <Item text='About Us' onClick='' />
