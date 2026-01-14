@@ -5,10 +5,10 @@
   /* font family */
   /* font size */
   /* font weight */
-  --bg-color: rgb(236, 234, 234);
-  --sideContent-bg-color: rgb(210, 216, 210);
-  --sideContent-secondary-bg-color: rgb(242, 242, 242);
-  --sideContent-tertiary-bg-color: rgb(129, 155, 139);
+  --primary-bg-color: white;
+  --secondary-bg-color: rgb(129, 155, 139);
+  --tertiary-bg-color: rgb(168, 214, 198);
+  --form-bg-color: #ccc;
 }
 
 * {
@@ -20,14 +20,14 @@
 }
 
 body {
-
-  padding: 0 10px;
-
+  
   header {
-    padding: 15px 0px;
+    padding: 15px 10px;
+    background-color: var(--secondary-bg-color);
 
     i.fa-archway {
       font-size: 28px;
+      color: black;
   
       &::after {
         content: "Hotel";
@@ -53,6 +53,10 @@ body {
       cursor: pointer;
     }
 
+  }
+
+  .mainContent {
+    padding: 0 10px;
   }
 
   form {
@@ -81,12 +85,56 @@ body {
       input, button {
         height: 30px;
         border-radius: 5px;
-        border: 1px solid #ccc;
+        border: 1px solid var(--form-bg-color);
       }
       label, input, button {
         display: block;
         max-width: 300px;
         width: 50%;
+      }
+    }
+
+    &#bookingForm {
+      background-color: var(--secondary-bg-color);
+      padding: 15px 0;
+      justify-items: center;
+
+      .dateField, .peopleField {
+        margin: 20px 0;
+        background-color: var(--primary-bg-color);
+      }
+      .dateField, .peopleField, button{
+        width: 70%;
+        max-width: 250x;
+        height: 70px;
+        border-radius: 10px;
+      }
+      h3 {
+        font-weight: normal;
+        margin-bottom: 5px;
+        text-align: left;
+      }
+      input {
+        display: block;
+        color: darkgrey;
+        height: 20px;
+      }
+      h3, input {
+        margin-left: 15px;
+      }
+      input, button {
+        border: none;
+      }
+      button {
+        font-size: large;
+        margin-bottom: 20px;
+        color: white;
+        background-color: var(--tertiary-bg-color);
+        cursor: pointer;
+
+        &:hover {
+          background-color: black;
+        }
       }
     }
   }

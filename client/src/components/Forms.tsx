@@ -21,8 +21,9 @@ export default function Form({ type }) {
         <form id='bookingForm'>
             <Field type='date' text='Check In' />
             <Field type='date' text='Check Out' />
-            <Field type='place' text='Place' />
             <Field type='people' text='People' />
+
+            <button type='submit'>Find Bookings</button>
         </form>
     );
 

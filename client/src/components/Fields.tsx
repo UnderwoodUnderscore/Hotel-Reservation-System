@@ -3,20 +3,14 @@ export default function Field({ type, text }) {
     let dateField = (
         <>
             {/* (calendar icon) date picker */}
-            <input type='date'></input>
-        </>
-    );
-
-    let placeField = (
-        <>
-            {/* (building icon) dropdown list */}
+            <input type='date' />
         </>
     );
 
     let peopleField = (
         <>
             {/* (profile icon) numeric field */}
-            <input type='number'></input>
+            <input type='number' min='1' placeholder='2' />
         </>
     )
 
@@ -24,7 +18,6 @@ export default function Field({ type, text }) {
         <section className={type + 'Field'}>
             <h3>{text}</h3>
             { type === 'date' && dateField }
-            { type === 'place' && placeField }
             { type === 'people' && peopleField }
         </section>
     )

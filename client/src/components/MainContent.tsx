@@ -37,10 +37,9 @@ export default function MainContent() {
     );
 
     return (
-        <>
-            <Header />
+        <section className='mainContent'>
             {!isAdmin && guestLanding}
             {isAdmin && adminLanding}
-        </>
+        </section>
     )
 }
