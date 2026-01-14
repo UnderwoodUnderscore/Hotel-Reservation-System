@@ -2,12 +2,32 @@ import Header from './Header';
 import Feature from './Feature';
 import Form from './Forms';
 
-export default function MainContent() {
+export default function MainContent({ content }) {
 
     const isAdmin = false;
 
-    const guestLanding = (
-        <>
+    const Home = ShowHome(isAdmin);
+    const Settings = ShowSettings();
+    const Profile = ShowProfile();
+
+    let page = {"Home" : Home, "Settings" : Settings, "Profile" : Profile};
+
+    return (
+        <section className='mainContent'>
+            {page[content]}
+        </section>
+    )
+}
+
+function ShowHome( isAdmin: boolean) {
+    if (isAdmin) {
+        return (
+            <>
+            </>
+        );
+
+    } else {
+        return (
             <div className='intro'>
                 <h1>Find Your Perfect Place to Stay</h1>
                 <p>Conveniently aggregate interoperable value after cross functional innovation.
@@ -18,28 +38,24 @@ export default function MainContent() {
 
                 <Form type='booking' />
             </div>
-        </>
-    );
+        );
+    }
+}
 
-    const adminLanding = (
-        <>
-        </>
-    );
-
-    const Settings = (
-        <>
-        </>
-    );
-
-    const Profile = (
-        <>
-        </>
-    );
+function ShowSettings() {
 
     return (
-        <section className='mainContent'>
-            {!isAdmin && guestLanding}
-            {isAdmin && adminLanding}
-        </section>
+        <>
+
+        </>
+    )
+}
+
+function ShowProfile() {
+
+    return (
+        <>
+
+        </>
     )
 }
