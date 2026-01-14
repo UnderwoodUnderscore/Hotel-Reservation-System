@@ -3,7 +3,7 @@ import Form from './Forms';
 
 export default function MainContent({ page, onPageChange }) {
 
-    const isAdmin = false;
+    const isAdmin = true;
 
     const Home = ShowHome(isAdmin);
     const Rooms = ShowRooms();
@@ -32,7 +32,6 @@ export default function MainContent({ page, onPageChange }) {
         return pageContent;
     }
     const Account = ShowAccount();
-    
 
     let pageContent = {"Home" : Home, "Settings" : Settings, "Account" : Account, "Rooms" : Rooms, "Reservations" : Reservations,
         
@@ -46,14 +45,24 @@ export default function MainContent({ page, onPageChange }) {
 }
 
 function ShowHome( isAdmin: boolean) {
+
+    let pageContent;
+
     if (isAdmin) {
-        return (
+        pageContent = (
             <>
+                <h1>Welcome Administrator</h1>
+
+                <ul className='ta-center'>
+                    <li><button>users</button></li>
+                    <li><button>reservations</button></li>
+                    <li><button>rooms</button></li>
+                </ul>
             </>
         );
 
     } else {
-        return (
+        pageContent = (
             <div className='intro ta-center'>
                 <h1>Find Your Perfect Place to Stay</h1>
                 <p>Conveniently aggregate interoperable value after cross functional innovation.
@@ -66,6 +75,8 @@ function ShowHome( isAdmin: boolean) {
             </div>
         );
     }
+
+    return pageContent;
 }
 
 function ShowSettings() {
