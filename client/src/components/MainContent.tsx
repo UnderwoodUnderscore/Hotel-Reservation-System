@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Header from './Header';
 import Feature from './Feature';
 import Form from './Forms';
@@ -8,9 +9,9 @@ export default function MainContent({ page }) {
 
     const Home = ShowHome(isAdmin);
     const Settings = ShowSettings();
-    const Profile = ShowProfile();
+    const Account = ShowAccount();
 
-    let pageContent = {"Home" : Home, "Settings" : Settings, "Profile" : Profile};
+    let pageContent = {"Home" : Home, "Settings" : Settings, "Account" : Account};
 
     return (
         <section className='mainContent'>
@@ -51,11 +52,25 @@ function ShowSettings() {
     )
 }
 
-function ShowProfile() {
+function ShowAccount() {
+
+    const [display, setDisplay] = useState('AccountSettings')
+
+    const AccountSettings = (
+        <>
+        </>
+    )
 
     return (
         <section className='mainContent'>
-            
+            {/* user profile icon (top right) */}
+            {/* start at 'Account Settings' by default */}
+            <ul className='accountOptions'>
+                <li>Account Settings</li>
+                <li>Reservations</li>
+                <li>Log Out</li>
+                <li></li>
+            </ul>
         </section>
     )
 }

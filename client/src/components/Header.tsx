@@ -8,7 +8,7 @@ export default function Header({ onPageChange }) {
 
     const mainMenuItems = [
         <Item text='Home' onClick={() => {onPageChange('Home')}} />,
-        <Item text='Profile' onClick={() => {onPageChange('Profile')}} />,
+        <Item text='Account' onClick={() => {onPageChange('Account')}} />,
         <Item text='Rooms' onClick={() => {onPageChange('Rooms')}} />,
         // <Item text='Contact' onClick={() => {onPageChange('Contact')}} />,
         // <Item text='About Us' onClick={() => {onPageChange('About Us')}} />
