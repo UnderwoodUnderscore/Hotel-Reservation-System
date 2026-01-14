@@ -9,24 +9,34 @@ export default function MainContent({ page, onPageChange }) {
     const Rooms = ShowRooms();
     const Reservations = ShowReservations();
     const Settings = ShowSettings();
-    // const Account = ShowAccount();
 
-    const Account = (
+    function ShowAccount(option = 'Account Settings') {
         
-        <section className='mainContent'>
-            {/* user profile icon (top right) */}
-            {/* start at 'Account Settings' by default */}
-            <ul className='accountOptions'>
-                <li>Account Settings</li>
-                <li><button onClick={updatePage(() => onPageChange, 'Reservations')}>Reservations</button></li>
-                <li>Log Out</li>
-                <li></li>
-            </ul>
-        </section>
-    );
+        let pageContent;
+
+        if (option === 'Account Settings') {
+            pageContent = (
+                <section className='mainContent'>
+                    {/* user profile icon (top right) */}
+                    {/* start at 'Account Settings' by default */}
+                    <ul className='accountOptions'>
+                        <li><button onClick={() => updatePage(onPageChange, 'Account')}>Account Settings</button></li>
+                        <li><button onClick={() => updatePage(onPageChange, 'Reservations')}>Reservations</button></li>
+                        <li>Log Out</li>
+                        <li></li>
+                    </ul>
+                </section>
+            );
+        }
+
+        return pageContent;
+    }
+    const Account = ShowAccount();
     
 
-    let pageContent = {"Home" : Home, "Settings" : Settings, "Account" : Account, "Rooms" : Rooms, "Reservations" : Reservations};
+    let pageContent = {"Home" : Home, "Settings" : Settings, "Account" : Account, "Rooms" : Rooms, "Reservations" : Reservations,
+        
+    };
 
     return (
         <section className='mainContent'>
@@ -63,27 +73,6 @@ function ShowSettings() {
     return (
         <section className='mainContent'>
         
-        </section>
-    )
-}
-
-function ShowAccount() {
-
-    const AccountSettings = (
-        <>
-        </>
-    )
-
-    return (
-        <section className='mainContent'>
-            {/* user profile icon (top right) */}
-            {/* start at 'Account Settings' by default */}
-            <ul className='accountOptions'>
-                <li>Account Settings</li>
-                <li>Reservations</li>
-                <li>Log Out</li>
-                <li></li>
-            </ul>
         </section>
     )
 }
