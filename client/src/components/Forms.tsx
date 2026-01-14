@@ -4,7 +4,7 @@ export default function Form({ type }) {
 
     const loginForm = (
         <form id='loginForm'>
-            <i className='fa-solid fa-house'></i>
+            <i className='fa-solid fa-house w-100'></i>
             <h1 className='loginTitle ta-center'>Sign in to Hotel Suites</h1>
 
             <label htmlFor='username'>Username</label>

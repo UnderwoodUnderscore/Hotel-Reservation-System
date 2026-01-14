@@ -20,10 +20,10 @@ export default function MainContent({ page, onPageChange }) {
                     {/* user profile icon (top right) */}
                     {/* start at 'Account Settings' by default */}
                     <ul className='accountOptions'>
+                        <h2 className='ta-right'>user</h2> {/* TODO: remove from function, replace with profile component */}
                         <li><button onClick={() => updatePage(onPageChange, 'Account')}>Account Settings</button></li>
                         <li><button onClick={() => updatePage(onPageChange, 'Reservations')}>Reservations</button></li>
                         <li>Log Out</li>
-                        <li></li>
                     </ul>
                 </section>
             );
@@ -82,6 +82,8 @@ function ShowRooms() {
     return (
         <section className='mainContent'>
             <h1>Rooms</h1>
+
+            <input className='searchbar w-100' type='search' placeholder='Room Name' />
         </section>
     )
 }
@@ -91,6 +93,7 @@ function ShowReservations() {
     return (
         <>
             <h1>Reservations</h1>
+
         </>
     )
 }

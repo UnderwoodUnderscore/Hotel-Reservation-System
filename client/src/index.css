@@ -21,6 +21,21 @@
 
 body {
   /* self-defined css quick styles */
+  .w-25 {
+    width: 25%;
+  }
+  .w-33 {
+    width: 33%;
+  }
+  .w-50 {
+    width: 50%;
+  }
+  .w-66 {
+    width: 66%;
+  }
+  .w-100 {
+    width: 100%;
+  }
   .ta-left {
     text-align: left;
   }
@@ -60,7 +75,6 @@ body {
       margin-top: 15px;  /* match with header padding */
       position: absolute;
       left: 0;
-      width: 100%;
       background-color: rgba(255,255,255, 0.8);
     }
     ul.headerMenu > li {
@@ -81,7 +95,6 @@ body {
 
       i.fa-house {
         font-size: 35px;
-        width: 100%;
       }
       h1.loginTitle {
         font-size: 1.4em;
@@ -162,7 +175,10 @@ body {
     border-radius: 4%;
   }
 
-  .dateField, .placeField, .peopleField {
+  .searchbar {
+    height: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
   }
 }
 
