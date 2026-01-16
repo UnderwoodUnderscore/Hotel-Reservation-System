@@ -23,7 +23,7 @@ export default function Form({ type }) {
             <Field type='date' text='Check Out' />
             <Field type='people' text='People' />
 
-            <button className='cursor-pointer' type='submit'>Find Bookings</button>
+            <button className='cursor-pointer' type='submit' onClick={testAPI}>Find Bookings</button>
         </form>
     );
 
@@ -33,4 +33,21 @@ export default function Form({ type }) {
             { type === 'booking' && bookingForm }
         </>
     )
+}
+
+async function testAPI(event) {
+    event?.preventDefault();
+
+    // GitHub API example (public API, no auth needed)
+    let response = await fetch('https://api.github.com/users/UnderwoodUnderscore/repos');
+
+    if (!response.ok) {
+        console.log('API request failed: ', response.status);
+    } else {
+        let data = await response.json();
+        console.log('API request successful: ');
+        data.forEach((repo) => {
+            console.log(repo.url);
+        });
+    }
 }

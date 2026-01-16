@@ -3,7 +3,7 @@ import Form from './Forms';
 
 export default function MainContent({ page, onPageChange }) {
 
-    const isAdmin = true;
+    const isAdmin = false;
 
     const Home = ShowHome(isAdmin);
     const Rooms = ShowRooms();
